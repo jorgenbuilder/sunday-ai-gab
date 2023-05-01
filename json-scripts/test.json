@@ -1,0 +1,96 @@
+{
+  "$schema": "../schema.json",
+  "metadata": {
+    "title": "The Test Tavern",
+    "author": "Jorgen",
+    "version": "1.0.0",
+    "language": "en"
+  },
+  "characters": [],
+  "nodes": [
+    {
+      "id": "start",
+      "text": "As you enter the adventurers tavern, you notice the lively atmosphere and the smell of hearty food...",
+      "choices": [
+        {
+          "text_id": "approach_barkeep",
+          "text": "Approach the barkeep.",
+          "target": "barkeep_greeting"
+        }
+      ]
+    },
+    {
+      "id": "barkeep_greeting",
+      "speaker": {
+        "name": "Barkeep",
+        "portrait": "barkeep_portrait.png"
+      },
+      "text": "Welcome to the tavern, adventurer! What can I get for you?",
+      "choices": [
+        {
+          "text_id": "ask_for_menu",
+          "text": "Can I see the menu?",
+          "target": "menu"
+        },
+        {
+          "text_id": "ask_about_adventures",
+          "text": "Any exciting adventures happening around here?",
+          "target": "adventures"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "text": "The barkeep hands you a menu, and you start browsing the various dishes and drinks available.",
+      "choices": [
+        {
+          "text_id": "order_meal",
+          "text": "Order a meal.",
+          "target": "meal"
+        },
+        {
+          "text_id": "order_drink",
+          "text": "Order a drink.",
+          "target": "dream"
+        }
+      ]
+    },
+    {
+      "id": "meal",
+      "text": "You order a delicious meal, and the barkeep serves it to you.",
+      "choices": [
+        {
+          "text_id": "eat_meal",
+          "text": "Eat the meal.",
+          "target": "end"
+        }
+      ]
+    },
+    {
+      "id": "dream",
+      "text": "You order a refreshing drink, and the barkeep serves it to you.",
+      "choices": [
+        {
+          "text_id": "drink",
+          "text": "Drink up.",
+          "target": "end"
+        }
+      ]
+    },
+    {
+      "id": "adventures",
+      "text": "The barkeep tells you about the various adventures and quests available in the surrounding area.",
+      "choices": [
+        {
+          "text_id": "listen",
+          "text": "Listen carefully.",
+          "target": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "text": "You finish your conversation with the barkeep and continue to enjoy the lively atmosphere of the tavern."
+    }
+  ]
+}

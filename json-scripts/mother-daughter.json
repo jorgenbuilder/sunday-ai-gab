@@ -1,0 +1,404 @@
+{
+  "metadata": {
+    "title": "Mother-Daughter Talk",
+    "author": "Broadway Screenplay Writer",
+    "language": "en"
+  },
+  "characters": [
+    {
+      "id": "mother",
+      "name": "Mother"
+    },
+    {
+      "id": "daughter",
+      "name": "Daughter"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "character": "mother",
+      "text_id": "mother_start",
+      "text": "Honey, we need to talk about our relationship.",
+      "choices": [
+        {
+          "text_id": "ask_why",
+          "text": "Why? What's wrong?",
+          "target": "daughter_why"
+        },
+        {
+          "text_id": "remain_silent",
+          "text": "Remain silent",
+          "target": "mother_repeats"
+        }
+      ]
+    },
+    {
+      "id": "daughter_why",
+      "character": "daughter",
+      "text_id": "daughter_why_text",
+      "text": "Why? What's wrong?",
+      "choices": [
+        {
+          "text_id": "explain_feelings",
+          "text": "Explain feelings",
+          "target": "mother_feelings"
+        },
+        { "text_id": "avoid_topic", "text": " Avoid", "target": "mother_avoid" }
+      ]
+    },
+    {
+      "id": "mother_repeats",
+      "character": "mother",
+      "text_id": "mother_repeats_text",
+      "text": "We need to talk about our relationship.",
+      "choices": [
+        {
+          "text_id": "ask_why_again",
+          "text": "Ask again",
+          "target": "daughter_why"
+        },
+        {
+          "text_id": "remain_silent_again",
+          "text": "Remain silent",
+          "target": "mother_insists"
+        }
+      ]
+    },
+    {
+      "id": "mother_insists",
+      "character": "mother",
+      "text_id": "mother_insists_text",
+      "text": "Please, don't avoid this conversation.",
+      "choices": [
+        {
+          "text_id": "ask_why_finally",
+          "text": "Ask why",
+          "target": "daughter_why"
+        },
+        {
+          "text_id": "leave_room",
+          "text": "Leave room",
+          "target": "daughter_leaves"
+        }
+      ]
+    },
+    {
+      "id": "daughter_leaves",
+      "character": "daughter",
+      "text_id": "daughter_leaves_text",
+      "text": "Daughter leaves the room, slamming the door behind her. The conversation ends abruptly.",
+      "goto": "end"
+    },
+    {
+      "id": "mother_feelings",
+      "character": "mother",
+      "text_id": "mother_feelings_text",
+      "text": "I feel like we've been drifting apart lately.",
+      "choices": [
+        { "text_id": "agree", "text": "Agree", "target": "daughter_agree" },
+        {
+          "text_id": "disagree",
+          "text": "Disagree",
+          "target": "daughter_disagree"
+        },
+        {
+          "text_id": "ask_for_examples",
+          "text": "Ask for examples",
+          "target": "daughter_examples"
+        }
+      ]
+    },
+    {
+      "id": "mother_avoid",
+      "character": "mother",
+      "text_id": "mother_avoid_text",
+      "text": "Nevermind, it's not important.",
+      "choices": [
+        {
+          "text_id": "press_mother",
+          "text": "Press her",
+          "target": "daughter_press"
+        },
+        {
+          "text_id": "let_it_go",
+          "text": "Let it go",
+          "target": "daughter_let_go"
+        }
+      ]
+    },
+    {
+      "id": "daughter_press",
+      "character": "daughter",
+      "text_id": "daughter_press_text",
+      "text": "No, tell me what you mean!... The sky falls randomly, ending the conversation.",
+      "goto": "end"
+    },
+
+    {
+      "id": "daughter_let_go",
+      "character": "daughter",
+      "text_id": "daughter_let_go_text",
+      "text": "Alright, if you don't want to talk about it.",
+      "goto": "end"
+    },
+    {
+      "id": "daughter_agree",
+      "character": "daughter",
+      "text_id": "daughter_agree_text",
+      "text": "You're right, we haven't been as close lately.",
+      "choices": [
+        {
+          "text_id": "suggest_talk",
+          "text": "suggest_talk",
+          "target": "daughter_suggest_talk"
+        },
+        {
+          "text_id": "suggest_activity",
+          "text": "suggest_activity",
+          "target": "daughter_suggest_activity"
+        }
+      ]
+    },
+    {
+      "id": "daughter_disagree",
+      "character": "daughter",
+      "text_id": "daughter_disagree_text",
+      "text": "I don't think we've been drifting apart.",
+      "choices": [
+        {
+          "text_id": "argue_point",
+          "text": "argue_point",
+          "target": "mother_argue"
+        },
+        {
+          "text_id": "ask_for_examples_again",
+          "text": "ask_for_examples_again",
+          "target": "daughter_examples"
+        }
+      ]
+    },
+    {
+      "id": "daughter_examples",
+      "character": "daughter",
+      "text_id": "daughter_examples_text",
+      "text": "Can you give me some examples?",
+      "choices": [
+        {
+          "text_id": "give_examples",
+          "text": "give_examples",
+          "target": "mother_examples"
+        },
+        {
+          "text_id": "avoid_examples",
+          "text": "avoid_examples",
+          "target": "mother_avoid_examples"
+        }
+      ]
+    },
+    {
+      "id": "mother_examples",
+      "character": "mother",
+      "text_id": "mother_examples_text",
+      "text": "Well, we used to talk more and spend more time together.",
+      "choices": [
+        {
+          "text_id": "acknowledge_examples",
+          "text": "acknowledge_examples",
+          "target": "daughter_acknowledge_examples"
+        },
+        {
+          "text_id": "deny_examples",
+          "text": "deny_examples",
+          "target": "daughter_deny_examples"
+        }
+      ]
+    },
+    {
+      "id": "mother_avoid_examples",
+      "character": "mother",
+      "text_id": "mother_avoid_examples_text",
+      "text": "I don't want to get into specifics right now.",
+      "choices": [
+        {
+          "text_id": "press_examples",
+          "text": "press_examples",
+          "target": "daughter_press_examples"
+        },
+        {
+          "text_id": "drop_examples",
+          "text": "drop_examples",
+          "target": "daughter_drop_examples"
+        }
+      ]
+    },
+    {
+      "id": "daughter_press_examples",
+      "character": "daughter",
+      "text_id": "daughter_press_examples_text",
+      "text": "No, please, I want to understand.",
+      "choices": [
+        {
+          "text_id": "give_examples_again",
+          "text": "give_examples_again",
+          "target": "mother_examples"
+        },
+        {
+          "text_id": "avoid_examples_again",
+          "text": "avoid_examples_again",
+          "target": "mother_avoid_examples"
+        }
+      ]
+    },
+    {
+      "id": "daughter_drop_examples",
+      "character": "daughter",
+      "text_id": "daughter_drop_examples_text",
+      "text": "Okay, we don't have to talk about it.",
+      "goto": "end"
+    },
+    {
+      "id": "daughter_acknowledge_examples",
+      "character": "daughter",
+      "text_id": "daughter_acknowledge_examples_text",
+      "text": "You're right, I've noticed that too.",
+      "choices": [
+        {
+          "text_id": "suggest_talk_again",
+          "text": "suggest_talk_again",
+          "target": "daughter_suggest_talk"
+        },
+        {
+          "text_id": "suggest_activity_again",
+          "text": "suggest_activity_again",
+          "target": "daughter_suggest_activity"
+        }
+      ]
+    },
+    {
+      "id": "daughter_deny_examples",
+      "character": "daughter",
+      "text_id": "daughter_deny_examples_text",
+      "text": "I think we've just been busy, that's all.",
+      "choices": [
+        {
+          "text_id": "argue_point_again",
+          "text": "argue_point_again",
+          "target": "mother_argue"
+        },
+        {
+          "text_id": "accept_explanation",
+          "text": "accept_explanation",
+          "target": "mother_accept_explanation"
+        }
+      ]
+    },
+    {
+      "id": "daughter_suggest_talk",
+      "character": "daughter",
+      "text_id": "daughter_suggest_talk_text",
+      "text": "Let's make an effort to talk more.",
+      "choices": [
+        {
+          "text_id": "agree_talk",
+          "text": "agree_talk",
+          "target": "mother_agree_talk"
+        },
+        {
+          "text_id": "disagree_talk",
+          "text": "disagree_talk",
+          "target": "mother_disagree_talk"
+        }
+      ]
+    },
+    {
+      "id": "daughter_suggest_activity",
+      "character": "daughter",
+      "text_id": "daughter_suggest_activity_text",
+      "text": "Maybe we can do something together this weekend?",
+      "choices": [
+        {
+          "text_id": "agree_activity",
+          "text": "agree_activity",
+          "target": "mother_agree_activity"
+        },
+        {
+          "text_id": "disagree_activity",
+          "text": "disagree_activity",
+          "target": "mother_disagree_activity"
+        }
+      ]
+    },
+    {
+      "id": "mother_argue",
+      "character": "mother",
+      "text_id": "mother_argue_text",
+      "text": "No, I'm sure there's more to it than that.",
+      "choices": [
+        {
+          "text_id": "continue_argument",
+          "text": "continue_argument",
+          "target": "daughter_continue_argument"
+        },
+        {
+          "text_id": "end_argument",
+          "text": "end_argument",
+          "target": "daughter_end_argument"
+        }
+      ]
+    },
+    {
+      "id": "mother_accept_explanation",
+      "character": "mother",
+      "text_id": "mother_accept_explanation_text",
+      "text": "You might be right. Let's make an effort to reconnect.",
+      "goto": "end"
+    },
+    {
+      "id": "mother_agree_talk",
+      "character": "mother",
+      "text_id": "mother_agree_talk_text",
+      "text": "That sounds like a good idea.",
+      "goto": "end"
+    },
+    {
+      "id": "mother_disagree_talk",
+      "character": "mother",
+      "text_id": "mother_disagree_talk_text",
+      "text": "I'm not sure talking more will help.",
+      "goto": "end"
+    },
+    {
+      "id": "mother_agree_activity",
+      "character": "mother",
+      "text_id": "mother_agree_activity_text",
+      "text": "I'd love to do something together this weekend.",
+      "goto": "end"
+    },
+    {
+      "id": "mother_disagree_activity",
+      "character": "mother",
+      "text_id": "mother_disagree_activity_text",
+      "text": "I don't think that will help our relationship.",
+      "goto": "end"
+    },
+    {
+      "id": "daughter_continue_argument",
+      "character": "daughter",
+      "text_id": "daughter_continue_argument_text",
+      "text": "I think we should try to understand each other better.",
+      "goto": "end"
+    },
+    {
+      "id": "daughter_end_argument",
+      "character": "daughter",
+      "text_id": "daughter_end_argument_text",
+      "text": "Fine, let's not argue about this anymore.",
+      "goto": "end"
+    },
+    {
+      "id": "end",
+      "text": "end"
+    }
+  ]
+}

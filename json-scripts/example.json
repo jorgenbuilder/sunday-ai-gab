@@ -1,0 +1,114 @@
+{
+  "$schema": "../schema.json",
+  "metadata": {
+    "title": "The Adventurers' Tavern",
+    "author": "Jorgen",
+    "version": "1.0.0",
+    "language": "en"
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "Player"
+    },
+    {
+      "id": "barkeep",
+      "name": "Barkeep",
+      "portrait": "barkeep.png"
+    }
+  ],
+  "localization": {
+    "es": {
+      "language": "Spanish",
+      "translations": {
+        "tavern_description": "Una taberna llena de aventureros, con el sonido de la música y la risa llenando el aire.",
+        "barkeep_greeting": "¡Hola, aventurero! ¿Qué puedo ofrecerte hoy?",
+        "ask_for_info": "Preguntar por información",
+        "order_drink": "Pedir una bebida",
+        "player_info_choice": "¿Hay algo interesante sucediendo en la taberna?",
+        "player_drink_choice": "Me gustaría pedir una bebida, por favor.",
+        "barkeep_info_response": "Hay rumores de un tesoro escondido en las montañas cercanas. Algunos aventureros ya han salido a buscarlo.",
+        "barkeep_drink_response": "¡Aquí tienes! Disfruta de tu bebida y relájate un rato."
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "text_id": "tavern_description",
+      "text": "A bustling tavern filled with adventurers, with the sound of music and laughter filling the air.",
+      "goto": "greet"
+    },
+    {
+      "id": "greet",
+      "character": "barkeep",
+      "text_id": "barkeep_greeting",
+      "text": "Hello, adventurer! What can I get you today?",
+      "choices": [
+        {
+          "text_id": "ask_for_info",
+          "text": "Ask for information",
+          "target": "info"
+        },
+        {
+          "text_id": "order_drink",
+          "text": "Order a drink",
+          "target": "drink"
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "character": "player",
+      "text_id": "player_info_choice",
+      "text": "Is there anything interesting happening around the tavern?",
+      "goto": "barkeep_info"
+    },
+    {
+      "id": "drink",
+      "character": "player",
+      "text_id": "player_drink_choice",
+      "text": "I'd like to order a drink, please.",
+      "goto": "barkeep_drink"
+    },
+    {
+      "id": "barkeep_info",
+      "character": "barkeep",
+      "text_id": "barkeep_info_response",
+      "text": "There are rumors of a hidden treasure in the nearby mountains. Some adventurers have already set out to look for it.",
+      "goto": "end"
+    },
+    {
+      "id": "barkeep_drink",
+      "character": "barkeep",
+      "text_id": "barkeep_drink_response",
+      "text": "Here you go! Enjoy your drink and take a load off for a while.",
+      "actions": [
+        {
+          "type": "set",
+          "variable": "has_drink",
+          "value": true
+        }
+      ],
+      "goto": "end"
+    },
+    {
+      "id": "end",
+      "text": "You continue your time at the tavern, enjoying the lively atmosphere and pondering your next adventure.",
+      "choices": [
+        {
+          "text_id": "ask_for_info",
+          "text": "Start a new conversation",
+          "conditions": [
+            {
+              "variable": "has_drink",
+              "comparison": "equal",
+              "value": false
+            }
+          ],
+          "target": "greet"
+        }
+      ]
+    }
+  ]
+}

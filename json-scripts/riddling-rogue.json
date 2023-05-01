@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "title": "The Riddling Rogue",
+    "author": "Playwright AI",
+    "language": "en"
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "Player"
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "portrait": "rogue_portrait.jpg"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "character": "rogue",
+      "text": "Well, well, well, what do we have here? A brave adventurer, I presume? I have a little game for you. If you can solve my riddles, I'll let you pass. If not, you'll suffer the consequences. Are you ready?",
+      "choices": [
+        {
+          "text_id": "accept_challenge",
+          "text": "I accept your challenge.",
+          "target": "riddle_1"
+        },
+        {
+          "text_id": "decline_challenge",
+          "text": "I don't have time for your games.",
+          "target": "refuse_riddle"
+        }
+      ]
+    },
+    {
+      "id": "refuse_riddle",
+      "character": "rogue",
+      "text": "Ah, a pity. It seems you're not as brave as I thought. Farewell, adventurer!",
+      "goto": "end"
+    },
+    {
+      "id": "riddle_1",
+      "character": "rogue",
+      "text": "Very well! Here's the first riddle: 'I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?'",
+      "choices": [
+        {
+          "text_id": "riddle_1_echo",
+          "text": "An echo.",
+          "target": "riddle_2"
+        },
+        {
+          "text_id": "riddle_1_wind",
+          "text": "The wind.",
+          "target": "wrong_answer_1"
+        },
+        {
+          "text_id": "riddle_1_voice",
+          "text": "A disembodied voice.",
+          "target": "wrong_answer_1"
+        }
+      ]
+    },
+    {
+      "id": "wrong_answer_1",
+      "character": "rogue",
+      "text": "Oh, how unfortunate! That's the wrong answer. You'll have to try harder next time, adventurer!",
+      "goto": "end"
+    },
+    {
+      "id": "riddle_2",
+      "character": "rogue",
+      "text": "Impressive! You've solved the first riddle. But can you solve the next one? 'I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?'",
+      "choices": [
+        {
+          "text_id": "riddle_2_pencil",
+          "text": "A pencil.",
+          "target": "riddle_3"
+        },
+        {
+          "text_id": "riddle_2_coal",
+          "text": "Coal.",
+          "target": "wrong_answer_2"
+        },
+        {
+          "text_id": "riddle_2_diamond",
+          "text": "A diamond.",
+          "target": "wrong_answer_2"
+        }
+      ]
+    },
+    {
+      "id": "wrong_answer_2",
+      "character": "rogue",
+      "text": "Oh dear! That's incorrect. Better luck next time, adventurer!",
+      "goto": "end"
+    },
+    {
+      "id": "riddle_3",
+      "character": "rogue",
+      "text": "Well done! You're quite clever. Now, for the final riddle: 'What has keys but can't open locks?'",
+      "choices": [
+        {
+          "text_id": "riddle_3_piano",
+          "text": "A piano.",
+          "target": "win"
+        },
+        {
+          "text_id": "riddle_3_map",
+          "text": "A map.",
+          "target": "wrong_answer_3"
+        },
+        {
+          "text_id": "riddle_3_keyring",
+          "text": "A keyring.",
+          "target": "wrong_answer_3"
+        }
+      ]
+    },
+    {
+      "id": "wrong_answer_3",
+      "character": "rogue",
+      "text": "Alas, you were so close, but that answer is wrong. Farewell, adventurer!",
+      "goto": "end"
+    },
+    {
+      "id": "win",
+      "character": "rogue",
+      "text": "Incredible! You've bested me in my own game. As promised, I'll let you pass unharmed. Until we meet again, adventurer!",
+      "goto": "end"
+    },
+    {
+      "id": "end"
+    }
+  ]
+}
