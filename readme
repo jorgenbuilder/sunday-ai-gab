@@ -1,0 +1,24 @@
+A branching dialogue tree system written by GPT4.
+
+```
+npm i
+```
+
+Try the examples:
+
+```
+npx ts-node ./src/cli.ts json-scripts/riddling-rogue.json
+npx ts-node ./src/cli.ts json-scripts/mother-daughter.json
+npx ts-node ./src/cli.ts json-scripts/example.json
+npx ts-node ./src/cli.ts json-scripts/test.json
+```
+
+Write your own! Prompt GPT4 with
+
+```
+I'd like you to generate a narrative tree that adheres to the following json schema: (PASTE IN schema.json).
+
+For the purpose of this task, I want to act like a broadway playwrite. The dialogue between characters should be rich and nuanced. For this scene, I want... (your idea!).
+```
+
+Then clone this repo, paste the output into `json-scripts` and run `npm t` to make sure the output is good. Then run `npx ts-node ./src/cli.ts json-scripts/my-script.json`.
